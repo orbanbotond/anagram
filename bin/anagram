@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require "anagram/options"
+require "anagram/anagram"
+
+options = Options.new ARGV
+anagram = Anagram.new options.dictionary, options.words
+puts "Anagrams:"
+anagram.anagrams.each do |anagram|
+  print "#{anagram[0]} : #{anagram[1].join ','}"
+  puts
+end
